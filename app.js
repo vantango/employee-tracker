@@ -60,5 +60,35 @@ function start() {
                 process.exit();
                 break;
         };
-    })
-}
+    });
+};
+
+function viewDept() {
+    console.log("View all depts");
+    const sqlQuery = "SELECT * FROM department";
+    connection.query(sqlQuery, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        start();
+    });
+};
+
+function viewRole() {
+    console.log("View all roles");
+    const sqlQuery = "SELECT * FROM role";
+    connection.query(sqlQuery, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        start();
+    });
+};
+
+function viewEmp() {
+    console.log("View all employees");
+    const sqlQuery = "SELECT * FROM employee";
+    connection.query(sqlQuery, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        start();
+    });
+};
