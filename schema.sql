@@ -15,6 +15,7 @@ CREATE TABLE role (
     title VARCHAR (30) NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INT NOT NULL,
+    FOREIGN KEY (department_id) references department(id) on delete cascade,
     PRIMARY KEY (id)
 );
 
@@ -24,19 +25,13 @@ CREATE TABLE employee (
     last_name VARCHAR (30) NOT NULL,
     role_id INT NOT NULL,
     manager_id INT,
+    FOREIGN KEY (role_id) references role(id) on delete cascade,
+    FOREIGN KEY (manager_id) references employee(id) on delete set NULL,
     PRIMARY KEY (id)
 );
 
 
 
 
--- INSERT INTO songs (title, artist, genre)
--- VALUES ("Never Gonna Give You Up", "Rick Astley", "80's Pop");
 
--- INSERT INTO songs (title, artist, genre)
--- VALUES ("Bohemian Rhapsody", "Queen", "Rock");
 
--- INSERT INTO songs (title, artist, genre)
--- VALUES ("Tommy's Theme", "Noisia", "Drum & Bass");
-
--- SELECT * FROM employees_db.songs;
