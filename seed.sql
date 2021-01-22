@@ -12,7 +12,3 @@ VALUES ("Ron", "Swanson", 1, NULL), ("John", "Doe", 2, 1);
 SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
-
--- INSERT * FROM department;
--- INSERT * FROM role;
--- INSERT * FROM employee;
